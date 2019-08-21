@@ -1,7 +1,13 @@
 .gradle
-/local.properties
-/.idea/workspace.xml
-/.idea/libraries
 .DS_Store
-/build
-/captures
+
+#Android Studio files
+.idea
+local.properties
+*.iml
+Jarvis2
+build
+bin
+app/outputfile.txt
+*.hprof
+
