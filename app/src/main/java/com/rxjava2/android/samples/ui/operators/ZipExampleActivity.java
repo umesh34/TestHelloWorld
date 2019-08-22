@@ -72,9 +72,14 @@ public class ZipExampleActivity extends AppCompatActivity {
         return Observable.create(new ObservableOnSubscribe<List<User>>() {
             @Override
             public void subscribe(ObservableEmitter<List<User>> e) {
-                if (!e.isDisposed()) {
-                    e.onNext(Utils.getUserListWhoLovesCricket());
-                    e.onComplete();
+                try {
+                    Thread.sleep(5000);
+                    if (!e.isDisposed()) {
+                        e.onNext(Utils.getUserListWhoLovesCricket());
+                        e.onComplete();
+                    }
+                }catch (Exception ex){
+                    ex.printStackTrace();
                 }
             }
         }).subscribeOn(Schedulers.io());
